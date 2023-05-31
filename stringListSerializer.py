@@ -13,13 +13,13 @@ class StringListSerializer:
             str: The encoded string representation of the input list of strings.
         """
         encodedString = ""
-        for str in stringList:
-            encodedString += len(str) + "#" + str
+        for s in stringList:
+            encodedString += str(len(s)) + "#" + s
         return encodedString
     
-    
+
     def decode(self, encodedString):
-         """
+        """
         Decodes a string representation into a list of strings.
         
         Args:
@@ -28,7 +28,15 @@ class StringListSerializer:
         Returns:
             list: The decoded list of strings.
         """
+        i = 0
+        ret = []
 
-        
-        pass
-    
+        while (i < len(encodedString)):
+            j = i
+            while (encodedString[j] != '#'):
+                j += 1
+            
+            size = int(encodedString[i : j])
+            ret.append(encodedString[j + 1 : j + 1 + size])
+            i = j + 1 + size
+        return ret
