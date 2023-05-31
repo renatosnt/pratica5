@@ -12,8 +12,12 @@ class StringListSerializer:
         Returns:
             str: The encoded string representation of the input list of strings.
         """
-        pass
-
+        encodedString = ""
+        for str in stringList:
+            encodedString += len(str) + "#" + str
+        return encodedString
+    
+    
     def decode(self, encodedString):
          """
         Decodes a string representation into a list of strings.
