@@ -2,12 +2,6 @@ class StringListSerializer:
     """
     The StringListSerializer class provides methods to encode and decode a list of strings into a string representation.
     """
-    def __init__(self):
-        """
-        Initializes a new instance of the StringListSerializer class.
-        """
-        pass
-    
     def encode(self, stringList):
         """
         Encodes a list of strings into a string representation.
