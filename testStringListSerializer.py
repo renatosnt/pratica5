@@ -14,3 +14,6 @@ class TestStringListSerializer(unittest.TestCase):
         encoded_string = "5#apple6#banana6#cherry"
         decoded_list = self.serializer.decode(encoded_string)
         self.assertEqual(decoded_list, ["apple", "banana", "cherry"])
+        
+if __name__ == '__main__':
+    unittest.main()
